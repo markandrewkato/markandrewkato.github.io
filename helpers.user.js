@@ -79,3 +79,14 @@ const scheduleAction = (hour, minute, action) => {
     // Start the initial scheduling
     scheduleNextRun();
 }
+
+// Click an element by attribute and value
+const clickElementByAttr = async (attribute, value) => {
+    try {
+        const selector = `[${attribute}="${value}"]`;
+        const element = await waitForElement(selector);
+        element.click();
+    } catch (error) {
+        console.error(error);
+    }
+};
